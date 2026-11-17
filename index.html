@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f6fc"><title>1000WIN — Espace membre</title>
+<style>
+:root{--navy:#10152e;--blue:#3159e8;--blue2:#67b9f4;--gold:#f3bd49;--green:#168b6d;--muted:#69738a;--bg:#f3f5fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#11182c}
+.app{max-width:520px;margin:auto;min-height:100vh;background:linear-gradient(150deg,#f8f9ff,#f0f3fa 65%,#f8f9fc);padding-bottom:100px}
+header{padding:22px 20px 18px;background:linear-gradient(130deg,#dff1ff,#f1efff);border-radius:0 0 28px 28px}
+.top{display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:10px}.crown{width:46px;height:46px;border-radius:15px;background:#111831;color:var(--gold);display:grid;place-items:center;font-size:29px;box-shadow:0 7px 18px #17224b30}.brand b{font-size:22px;letter-spacing:1px;color:#182448}.brand small{display:block;color:#66718a;font-size:11px}
+.bell{border:0;border-radius:50%;background:#fff;width:44px;height:44px;font-size:20px;box-shadow:0 5px 18px #23315b12}
+.greet{margin-top:22px;color:#626e85;font-size:14px}.member{font-weight:800;font-size:22px;color:#151c31;margin-top:3px}
+main{padding:16px 16px 0}.section-title{font-size:19px;font-weight:800;margin:18px 2px 12px}
+.wallet{background:radial-gradient(circle at 85% 10%,#3856a8 0,#1d2856 33%,#0e142b 78%);border-radius:25px;padding:21px;color:#fff;box-shadow:0 15px 30px #202c6330}
+.wallet .sub{color:#c7cde0;font-size:13px}.balance{font-size:37px;font-weight:850;margin:5px 0 12px}.balance small{font-size:19px}.wallet-stats{display:flex;justify-content:space-between;background:#ffffff12;border:1px solid #ffffff16;border-radius:15px;padding:12px;margin:13px 0}.wallet-stats small{display:block;color:#c5cbe0;font-size:11px}.wallet-stats b{font-size:16px}
+.actions{display:flex;gap:10px}.actions button{flex:1;border:0;border-radius:30px;padding:14px 8px;font-weight:800;font-size:15px;background:white;color:#11182c}.actions button.outline{background:#ffffff10;color:white;border:1px solid #ffffff40}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:#fff;border:1px solid #edf0f6;border-radius:20px;padding:16px;box-shadow:0 7px 20px #1d2b5510}
+.quick{display:flex;align-items:center;gap:12px;min-height:95px}.ico{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;color:white;font-size:23px;background:linear-gradient(145deg,#66c8f5,#3158e8);box-shadow:0 7px 14px #4268d533;flex:none}.ico.orange{background:linear-gradient(145deg,#ffd18a,#f28b36)}.ico.purple{background:linear-gradient(145deg,#b2a0ff,#5544db)}.quick b{font-size:14px}.quick small{display:block;color:var(--muted);margin-top:3px;font-size:11px}
+.pass{position:relative;overflow:hidden;background:linear-gradient(130deg,#f9fbff,#dce6f7);border-radius:21px;padding:17px;margin-bottom:12px;border:1px solid #fff;box-shadow:0 8px 20px #1b2c5010}.pass:after{content:"♛";position:absolute;right:15px;top:12px;color:#d8b34d55;font-size:64px}.tag{display:inline-block;background:#fff;border-radius:30px;padding:5px 10px;font-size:11px;color:#4d5a72;font-weight:750}.pass h3{font-size:22px;margin:12px 0 4px}.price{font-size:24px;font-weight:850;margin:5px 0;color:#17213d}.pass p{font-size:12px;color:#68738a;margin:5px 0 12px}.pass button,.primary{border:0;background:linear-gradient(100deg,#f8cb70,#f29a42);color:#34220c;border-radius:24px;padding:11px 17px;font-weight:800}
+.muted{font-size:12px;color:var(--muted);line-height:1.5}.line{height:1px;background:#edf0f5;margin:12px 0}
+.listrow{display:flex;align-items:center;gap:12px;padding:12px 0}.listrow b{font-size:14px}.listrow small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.ref{background:#eef3ff;border-radius:14px;padding:13px;font-weight:750;letter-spacing:1px;overflow-wrap:anywhere;color:#2451a4}
+.page{display:none}.page.active{display:block}.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);display:flex;justify-content:space-around;align-items:center;padding:10px 7px calc(12px + env(safe-area-inset-bottom));background:#ffffffed;backdrop-filter:blur(15px);border-top:1px solid #e8ebf2;z-index:5}
+.tab{border:0;background:none;color:#8991a3;font-size:11px;font-weight:650;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:54px}.tab span{font-size:22px}.tab.active{color:#254bd0}.plus{width:62px;height:62px;border-radius:50%;background:linear-gradient(145deg,#6d9aff,#3a4be8);color:#fff;border:5px solid #fff;box-shadow:0 6px 20px #405fe755;font-size:29px;margin-top:-31px}
+input{width:100%;border:1px solid #dfe4ee;border-radius:12px;padding:12px;font:inherit;margin:5px 0 12px}label{font-size:12px;font-weight:700}
+.notice{background:#fff6dc;color:#70540c;border:1px solid #f2df9c;border-radius:13px;padding:12px;font-size:11px;line-height:1.5;margin-bottom:12px}
+button{cursor:pointer}.toast{display:none;background:#e9f7ef;color:#176541;padding:12px;border-radius:12px;margin-top:12px;font-size:12px}
+@media(min-width:520px){body{padding:15px 0}.app{border-radius:25px;overflow:hidden;box-shadow:0 15px 50px #18244918}.tabbar{bottom:15px;border-radius:0 0 25px 25px}}
+</style></head>
+<body><div class="app">
+<header><div class="top"><div class="brand"><div class="crown">♛</div><div><b>1000WIN</b><small>ESPACE MEMBRE</small></div></div><button class="bell" onclick="toast('Aucune notification pour le moment.')">♧</button></div><div class="greet">Bienvenue</div><div class="member" id="memberName">Membre invité</div></header>
+<main>
+
+<section class="page active" id="signup">
+  <div class="section-title">Créer mon compte</div>
+  <div class="card">
+    <div style="text-align:center;margin-bottom:16px">
+      <div class="crown" style="margin:auto;font-size:30px">♛</div>
+      <h2 style="margin:10px 0 4px">Bienvenue sur 1000WIN</h2>
+      <p class="muted">Inscrivez-vous pour accéder directement à votre espace membre.</p>
+    </div>
+    <form id="signupForm" onsubmit="registerDirect(event)">
+      <label>Nom complet</label>
+      <input id="signupName" autocomplete="name" placeholder="Ex. Awa Traoré" required>
+      <label>Numéro de téléphone</label>
+      <input id="signupPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Votre numéro de téléphone" required>
+      <label>Mot de passe</label>
+      <input id="signupPassword" type="password" autocomplete="new-password" minlength="8" placeholder="8 caractères minimum" required>
+      <label>Confirmer le mot de passe</label>
+      <input id="signupConfirm" type="password" autocomplete="new-password" minlength="8" placeholder="Répétez le mot de passe" required>
+      <div style="display:flex;gap:9px;align-items:flex-start;margin:4px 0 14px">
+        <input id="signupTerms" type="checkbox" required style="width:18px;margin:2px 0">
+        <span class="muted">J'accepte les conditions d'utilisation et la politique de confidentialité de 1000WIN.</span>
+      </div>
+      <button class="primary" type="submit" style="width:100%">Créer mon compte</button>
+    </form>
+    <div id="signupError" class="toast" style="background:#fff0f0;color:#a32626"></div>
+    <div class="line"></div>
+    <p class="muted" style="text-align:center">Vous avez déjà un compte ? <a href="#" onclick="show('login');return false" style="color:#3159e8;font-weight:800">Se connecter</a></p>
+  </div>
+  <p class="muted" style="text-align:center;margin:14px 8px">Mode démonstration : vos informations ne sont pas encore enregistrées sur un serveur.</p>
+</section>
+
+<section class="page" id="login">
+  <div class="section-title">Connexion</div>
+  <div class="card">
+    <label>Numéro de téléphone</label>
+    <input id="loginPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Votre numéro">
+    <label>Mot de passe</label>
+    <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Votre mot de passe">
+    <button class="primary" style="width:100%" onclick="loginDemo()">Se connecter</button>
+    <div id="loginError" class="toast" style="background:#fff0f0;color:#a32626"></div>
+    <div class="line"></div>
+    <p class="muted" style="text-align:center">Pas encore de compte ? <a href="#" onclick="show('signup');return false" style="color:#3159e8;font-weight:800">Créer un compte</a></p>
+  </div>
+</section>
+<div class="notice"><b>Version démo :</b> les soldes, demandes et liens sont fictifs. Aucun paiement n’est exécuté. Les éventuels avantages devront être financés par une activité commerciale réelle et vérifiable, jamais par les dépôts des nouveaux membres.</div>
+<section class="page" id="home">
+<div class="wallet"><div class="sub">Solde disponible　◉</div><div class="balance">0 <small>FCFA</small></div><div class="wallet-stats"><div><small>Disponible</small><b>0 FCFA</b></div><div><small>En attente</small><b>0 FCFA</b></div></div><div class="actions"><button onclick="show('deposit')">↙ Déposer</button><button class="outline" onclick="show('withdraw')">↗ Retirer</button></div></div>
+<div class="section-title">Actions rapides</div><div class="grid">
+<div class="card quick" onclick="show('plans')"><div class="ico">▣</div><div><b>Mes plans</b><small>Voir les formules</small></div></div>
+<div class="card quick" onclick="show('history')"><div class="ico purple">↗</div><div><b>Historique</b><small>Suivre les opérations</small></div></div>
+<div class="card quick" onclick="show('team')"><div class="ico">♧</div><div><b>Mon équipe</b><small>Invitations</small></div></div>
+<div class="card quick" onclick="show('account')"><div class="ico orange">♙</div><div><b>Mon compte</b><small>Profil et sécurité</small></div></div></div>
+<div class="section-title">Découvrir nos passes</div>
+<div class="pass"><span class="tag">BRONZE · FORMULE 1</span><h3>VIP Bronze</h3><div class="price">3 000 FCFA</div><p>Accès aux services indiqués dans les conditions de l’offre.</p><button onclick="show('plans')">Découvrir　›</button></div>
+<div class="pass"><span class="tag">SILVER · FORMULE 2</span><h3>VIP Silver</h3><div class="price">5 000 FCFA</div><p>Accès aux services indiqués dans les conditions de l’offre.</p><button onclick="show('plans')">Découvrir　›</button></div>
+<div class="pass"><span class="tag">GOLD · FORMULE 3</span><h3>VIP Gold</h3><div class="price">20 000 FCFA</div><p>Accès aux services indiqués dans les conditions de l’offre.</p><button onclick="show('plans')">Découvrir　›</button></div>
+</section>
+<section class="page" id="plans"><div class="section-title">Plans</div><p class="muted">Choisissez une formule de service. Les prix sont des tarifs de démonstration.</p>
+<div class="pass"><span class="tag">BRONZE</span><h3>VIP Bronze</h3><div class="price">3 000 FCFA</div><p>Durée et prestations à définir clairement avant commercialisation.</p><button onclick="toast('Formule Bronze sélectionnée — souscription non activée.')">Voir les détails</button></div>
+<div class="pass"><span class="tag">SILVER</span><h3>VIP Silver</h3><div class="price">5 000 FCFA</div><p>Durée et prestations à définir clairement avant commercialisation.</p><button onclick="toast('Formule Silver sélectionnée — souscription non activée.')">Voir les détails</button></div>
+<div class="pass"><span class="tag">GOLD</span><h3>VIP Gold</h3><div class="price">20 000 FCFA</div><p>Durée et prestations à définir clairement avant commercialisation.</p><button onclick="toast('Formule Gold sélectionnée — souscription non activée.')">Voir les détails</button></div></section>
+<section class="page" id="deposit"><div class="section-title">Effectuer un dépôt</div><div class="card"><p class="muted">Canal envisagé : Orange Money</p><div class="price" style="color:#168b6d">07 87 99 70</div><label>Montant (FCFA)</label><input type="number" placeholder="Ex. 3000"><label>Référence de transaction</label><input placeholder="Référence fournie par le prestataire"><button class="primary" onclick="toast('Démo uniquement : aucun dépôt ni transfert effectué.')">Soumettre une demande</button></div></section>
+<section class="page" id="withdraw"><div class="section-title">Demander un retrait</div><div class="card"><p class="muted">Les retraits réels nécessitent un prestataire autorisé, la vérification du compte et un solde confirmé.</p><label>Numéro Orange Money</label><input placeholder="Votre numéro" inputmode="tel"><label>Montant (FCFA)</label><input type="number" placeholder="Montant"><button class="primary" onclick="toast('Démo uniquement : aucun retrait envoyé.')">Envoyer la demande</button></div></section>
+<section class="page" id="team"><div class="section-title">Équipe & invitations</div><div class="card"><b>Votre code d’invitation</b><div class="ref" id="refcode">1000WIN-DEMO</div><p class="muted">Partagez votre lien pour faire connaître les services. Les éventuelles commissions doivent correspondre à des ventes réelles, transparentes et licites.</p><button class="primary" onclick="copyLink()">Copier le lien d'invitation</button></div><div class="card" style="margin-top:12px"><b>Personnes invitées</b><div class="price" style="margin:8px 0">0 personne</div><div class="line"></div><div class="muted">Les invitations confirmées apparaîtront ici. Aucun membre pour le moment.</div></div></section>
+<section class="page" id="history"><div class="section-title">Historique</div><div class="card"><div class="listrow"><div class="ico">↓</div><div><b>Historique des dépôts</b><small>Aucune opération</small></div></div><div class="line"></div><div class="listrow"><div class="ico purple">↑</div><div><b>Historique des retraits</b><small>Aucune opération</small></div></div></div></section>
+<section class="page" id="account"><div class="section-title">Mon compte</div><div class="card">
+<div class="listrow"><div class="ico purple">♙</div><div><b>Informations personnelles</b><small>Profil du membre</small></div></div>
+<label>Nom complet</label><input id="profileName" placeholder="Votre nom complet">
+<label>Numéro de téléphone</label><input id="profilePhone" placeholder="Votre numéro" inputmode="tel">
+<label>Adresse e-mail (facultatif)</label><input id="profileEmail" type="email" placeholder="Votre adresse e-mail">
+<label>Ville</label><input id="profileCity" placeholder="Votre ville">
+<button class="primary" onclick="saveProfile()">Enregistrer mes informations</button>
+<div class="line"></div><div class="listrow"><div class="ico purple">⚙</div><div><b>Paramètres & sécurité</b><small>Mot de passe et protection du compte</small></div></div>
+<div class="listrow"><div class="ico orange">ⓘ</div><div><b>À propos de 1000WIN</b><small>Conditions et assistance à compléter</small></div></div>
+</div></section>
+<div class="toast" id="toast"></div>
+</main>
+<nav class="tabbar"><button class="tab active" onclick="show('home',this)"><span>⌂</span>Accueil</button><button class="tab" onclick="show('plans',this)"><span>▣</span>Plans</button><button class="tab plus" onclick="shareInvite()">＋</button><button class="tab" onclick="show('team',this)"><span>♧</span>Équipe</button><button class="tab" onclick="show('account',this)"><span>♙</span>Compte</button></nav>
+</div>
+<script>
+
+function shareInvite(){
+  let link='https://1000win.example/register?code=1000WIN-DEMO';
+  if(navigator.share){
+    navigator.share({title:'Rejoindre 1000WIN',text:'Voici mon lien d’invitation 1000WIN :',url:link})
+      .then(()=>toast('Lien partagé.')).catch(()=>{});
+  } else { copyLink(); }
+}
+function saveProfile(){
+  let name=document.getElementById('profileName')?.value||'';
+  let phone=document.getElementById('profilePhone')?.value||'';
+  if(!name.trim()||!phone.trim()){toast('Renseignez au minimum votre nom et votre numéro.');return;}
+  toast('Maquette : informations saisies, enregistrement serveur non activé.');
+}
+
+
+function show(id,el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  let target=document.getElementById(id);if(target)target.classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  if(el)el.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function registerDirect(event){
+  event.preventDefault();
+  const name=document.getElementById('signupName').value.trim();
+  const phone=document.getElementById('signupPhone').value.trim();
+  const password=document.getElementById('signupPassword').value;
+  const confirm=document.getElementById('signupConfirm').value;
+  const error=document.getElementById('signupError');
+  error.style.display='none';
+
+  if(!name||!phone){
+    error.textContent='Veuillez renseigner votre nom et votre numéro.';
+    error.style.display='block';
+    return;
+  }
+  if(password.length<8){
+    error.textContent='Le mot de passe doit contenir au moins 8 caractères.';
+    error.style.display='block';
+    return;
+  }
+  if(password!==confirm){
+    error.textContent='Les deux mots de passe ne correspondent pas.';
+    error.style.display='block';
+    return;
+  }
+  if(!document.getElementById('signupTerms').checked){
+    error.textContent='Veuillez accepter les conditions.';
+    error.style.display='block';
+    return;
+  }
+
+  document.getElementById('memberName').textContent=name;
+  document.getElementById('profileName').value=name;
+  document.getElementById('profilePhone').value=phone;
+  document.getElementById('signupForm').reset();
+  show('home');
+  toast('Inscription de démonstration réussie. Le compte réel nécessite un serveur sécurisé.');
+}
+
+function loginDemo(){
+  const error=document.getElementById('loginError');
+  error.textContent='La connexion réelle sera disponible après la mise en place du serveur et de la base de données.';
+  error.style.display='block';
+}
+
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',3500);}
+function copyLink(){let link='https://1000win.example/register?code=1000WIN-DEMO';if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(link).then(()=>toast('Lien de démonstration copié.')).catch(()=>toast(link));else toast(link);}
+</script></body></html>
